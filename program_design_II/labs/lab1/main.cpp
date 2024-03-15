@@ -89,7 +89,7 @@ int main(int argc, char *argv[])
     /**
      * 生成的可执行程序接受 待读文件地址 和 待写文件地址 两个参数
      * files/flickr-tags.txt files/result.txt
-    */
+     */
     FileProc FP;
     FP.readPath = argv[1], FP.writePath = argv[2];
     FP.OpenFile();
@@ -98,4 +98,3 @@ int main(int argc, char *argv[])
 
     return 0;
 }
-
