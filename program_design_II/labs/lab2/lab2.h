@@ -21,6 +21,7 @@ public:
             writeFile.close();
     }
 
+    int MenuChoose(); // 用户选择菜单上的功能
     void OpenFile(); // 打开文件
     void WordsCount(); // 统计词频
     void WriteResult(); // 写入结果
@@ -32,6 +33,20 @@ private:
     unordered_map<string, int> wordsCountMap; // 统计词频的哈希表
     vector<string> topVec;                    // 用一个vector存储结果，便于按顺序展示
 };
+
+int FileProc::MenuChoose(){
+    cout << "----------------------------" << endl;
+    cout << "           主菜单           " << endl;
+    cout << "----------------------------" << endl;
+    cout << "1. 统计词频: 出现最多的前50词" << endl;
+    cout << "2. 显示待查询词所在行信息" << endl;
+
+    int choice;
+    cout << "----------------------------" << endl;
+    cout << "请输入要进行的操作(1-2): ";
+    cin >> choice;
+    return choice;
+}
 
 void FileProc::OpenFile()
 {
