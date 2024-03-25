@@ -217,7 +217,8 @@
 
 
 ### 4. 互斥
- *“一个进程进入临界区，其他进程就无法进入该临界区”*
+ *一个进程进入临界区，其他进程就无法进入该临界区*
+ *一个进程访问某临界进程时，另一个想要访问该临界资源的进程必须等待*
 #### 互斥的需求
  - 必须实施
  - 没有饥饿或死锁
@@ -226,6 +227,7 @@
  - 对进程的相对速度和进程数量不能有任何假设（要求）
  - 一个进程只能在临界区停留有限的时间
 <br>
+
 #### 硬件支持
 ##### 屏蔽中断
 - 适用于单处理器系统
@@ -250,5 +252,9 @@
     return oldval;
   }
   ```
+
+#### 利用信号量解决无限缓冲区生产者/消费者问题
+[信号量解决无限缓冲区](https://blog.csdn.net/singxsy/article/details/109696792?ops_request_misc=&request_id=&biz_id=102&utm_term=%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%20%E4%BF%A1%E5%8F%B7%E9%87%8F%20%E6%97%A0%E9%99%90%E7%BC%93%E5%86%B2%E5%8C%BA&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-0-109696792.142^v99^pc_search_result_base8&spm=1018.2226.3001.4187)
+
 
 
