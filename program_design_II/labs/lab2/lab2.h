@@ -145,6 +145,8 @@ void FileProc::LinesWithT()
 {
     this->RestartRead();
     string target, line, word;
+    vector<string> lines;
+    int lineCount = 0;
     cout << "请输入待查询词：";
     cin >> target;
     // TODO debug
@@ -157,11 +159,16 @@ void FileProc::LinesWithT()
         {
             if (word == target)
             {
-                cout << line << endl;
+                lines.push_back(line);
+                lineCount++;
                 break;
             }
         }
     }
+
+    cout << "出现次数：" << lineCount << endl;
+    for (int i = 0; i < lines.size(); i++)
+        cout << "[" << i << "] " << lines[i] << endl;
     cout << "打印完毕，是否继续查询（1——是，0——否）：";
     string choice;
     cin >> choice;
@@ -175,14 +182,14 @@ void FileProc::LinesWithT()
 // 检测输入值是否为整数
 bool IsInt(string input)
 {
-    bool res = true;
+    if (input.size() > 2)
+        return false;
     for (char const &i : input)
         if (!isdigit(i))
         {
-            res = false;
-            break;
+            return false;
         }
-    return res;
+    return true;
 }
 
 int LegalChoice(string choice, int low, int high)
