@@ -19,11 +19,18 @@ int main()
             break;
 
         case 1:
+        {
             fp.WordsCount();
-            cout << "打印结束，即将返回主菜单" << endl;
+            string ifWrite;
+            cout << "是否需要将该结果写入其他文件（1：是，0：否）：";
+            getline(cin, ifWrite);
+            if (LegalChoice(ifWrite, 0, 1))
+                fp.WriteResult();
+            cout << "即将返回主菜单" << endl;
             system("pause");
             system("cls");
             break;
+        }
 
         case 2:
             fp.LinesWithT();
