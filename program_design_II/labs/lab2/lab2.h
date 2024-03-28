@@ -168,7 +168,7 @@ void FileProc::LinesWithT()
 
     cout << "出现次数：" << lineCount << endl;
     for (int i = 0; i < lines.size(); i++)
-        cout << "[" << i << "] " << lines[i] << endl;
+        cout << "[" << i + 1 << "] " << lines[i] << endl;
     cout << "打印完毕，是否继续查询（1——是，0——否）：";
     string choice;
     cin >> choice;
